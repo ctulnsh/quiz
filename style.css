@@ -1,0 +1,113 @@
+:root {
+    --blue-deep: #0a2540;
+    --blue-mid: #1a4a7a;
+    --blue-soft: #e8f1f8;
+    --white: #ffffff;
+    --gold: #c9a227;
+    --gold-light: #e8d48b;
+    --gold-dark: #9a7b1a;
+    --text: #0a2540;
+    --shadow: rgba(10, 37, 64, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Georgia, "Times New Roman", serif;
+    background: linear-gradient(165deg, var(--blue-soft) 0%, var(--white) 45%, #f7f3e8 100%);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.25rem 4rem;
+}
+
+h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--blue-deep);
+    letter-spacing: 0.02em;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--gold);
+    text-align: center;
+}
+
+#quiz {
+    width: 100%;
+    max-width: 560px;
+    background: var(--white);
+    border: 1px solid rgba(26, 74, 122, 0.15);
+    border-top: 4px solid var(--gold);
+    border-radius: 4px;
+    box-shadow: 0 8px 28px var(--shadow);
+    padding: 2rem 1.75rem 2.25rem;
+}
+
+#question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--blue-mid);
+    line-height: 1.45;
+    margin-bottom: 1.5rem;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#options button {
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: left;
+    padding: 0.85rem 1.1rem;
+    background: var(--blue-soft);
+    color: var(--blue-deep);
+    border: 1.5px solid transparent;
+    border-left: 4px solid var(--blue-mid);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#options button:hover {
+    background: var(--white);
+    border-color: var(--gold);
+    border-left-color: var(--gold);
+    color: var(--blue-deep);
+    box-shadow: 0 2px 10px rgba(201, 162, 39, 0.25);
+}
+
+#options button:active {
+    background: var(--gold-light);
+    border-left-color: var(--gold-dark);
+}
+
+#result {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--blue-deep);
+    text-align: center;
+    padding: 0.85rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    box-shadow: 0 4px 16px var(--shadow);
+    min-height: 0;
+}
+
+#result:empty {
+    display: none;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
